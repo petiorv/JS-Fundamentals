@@ -12,8 +12,11 @@ function solve(sales) {
         if(oldIncome) income+=oldIncome;
         townsWithProducts.get(town).set(product, income)
     }
-    for (let town of townsWithProducts){
-        console.log(town)
+    for (let [town] of townsWithProducts) {
+        console.log(`Town - ${town}`)
+        for (let [product, income] of townsWithProducts.get(town)){
+            console.log(`$$$${product} : ${income}`)
+        }
     }
 
 }
